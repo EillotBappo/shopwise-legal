@@ -8,7 +8,10 @@
  h1,h2{line-height:1.25}
  hr{border:0;border-top:1px solid #d1d1d6;margin:2rem 0}
  nav{margin-bottom:2rem;font-size:.9rem}
- @media(prefers-color-scheme:dark){body{color:#f2f2f7;background:#000}hr{border-color:#3a3a3c}a{color:#6cf}}
+ table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.95rem}
+ th,td{border:1px solid #d1d1d6;padding:.4rem .6rem;text-align:left;vertical-align:top}
+ th{background:#f2f2f7}
+ @media(prefers-color-scheme:dark){body{color:#f2f2f7;background:#000}hr{border-color:#3a3a3c}a{color:#6cf}th,td{border-color:#3a3a3c}th{background:#1c1c1e}}
 </style>
 </head><body>
 <nav><a href="./">Shopwise</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></nav>
@@ -20,14 +23,37 @@
 
 
 <h2>Information We Collect</h2>
-<p>We may collect the following types of information:</p>
-<ul>
-  <li>Name</li>
-  <li>Email address</li>
-  <li>Usage data</li>
-  <li>Location data</li>
-</ul>
-<p>We collect this information when you voluntarily provide it to us, when you use our Service, or through automated technologies.</p>
+<p>The table below lists every category of data the app collects. It matches,
+exactly, the App Privacy answers filed in App Store Connect and the
+<code>PrivacyInfo.xcprivacy</code> manifest shipped inside the app.</p>
+
+<table>
+  <thead><tr><th>Data</th><th>Why we collect it</th><th>Linked to you</th></tr></thead>
+  <tbody>
+    <tr><td>Name</td><td>App functionality — your account</td><td>Yes</td></tr>
+    <tr><td>Email address</td><td>App functionality — sign-in and account recovery</td><td>Yes</td></tr>
+    <tr><td>User ID</td><td>App functionality — to keep your lists and saved leaflets on your account</td><td>Yes</td></tr>
+    <tr><td>Your lists and saved items</td><td>App functionality — shopping lists, liked deals, loyalty cards</td><td>Yes</td></tr>
+    <tr><td>Coarse location</td><td>Advertising and analytics — relevant ads and nearby retailers</td><td>Yes</td></tr>
+    <tr><td>Device ID</td><td>Advertising and analytics</td><td>Yes</td></tr>
+    <tr><td>Product interaction</td><td>Advertising and analytics — which deals and leaflets are opened</td><td>Yes</td></tr>
+    <tr><td>Advertising data</td><td>Advertising — which ads were shown</td><td>Yes</td></tr>
+    <tr><td>Search history</td><td>Analytics — what people search for in the app</td><td>Yes</td></tr>
+    <tr><td>Purchase history</td><td>Analytics — Shopwise Plus subscription events</td><td>Yes</td></tr>
+    <tr><td>Crash data</td><td>Analytics — diagnosing crashes</td><td>No</td></tr>
+    <tr><td>Performance data</td><td>Advertising and analytics</td><td>No</td></tr>
+    <tr><td>Other diagnostic data</td><td>Advertising and analytics</td><td>No</td></tr>
+  </tbody>
+</table>
+
+<p>We collect this information when you provide it to us, when you use the app,
+and through the third-party services listed below.</p>
+
+<h2>Tracking</h2>
+<p><strong>We do not track you across other companies' apps and websites.</strong>
+None of the data above is linked to data from other sources for advertising or
+measurement purposes, and the app does not ask for permission to track, because
+it does not.</p>
 
 
 <h2>How We Use Your Information</h2>
@@ -45,9 +71,24 @@
 
 
 <h2>Third-Party Services</h2>
-<p>We may use third-party service providers to monitor and analyze the use of our Service, process payments, or assist with other business functions.</p>
-<p>We use Google Analytics to analyze website traffic. Google Analytics uses cookies to collect anonymous usage data. For more information, visit Google&#x27;s privacy policy.</p>
+<p>These are the only third parties that receive any of the data above:</p>
+<table>
+  <thead><tr><th>Service</th><th>What it does</th><th>What it receives</th></tr></thead>
+  <tbody>
+    <tr><td>Google AdMob</td><td>Shows ads to users on the free tier</td><td>Coarse location, device ID, advertising data, diagnostics</td></tr>
+    <tr><td>Google Firebase Analytics</td><td>Tells us which features are used</td><td>Product interaction, search history, purchase history, device ID, diagnostics</td></tr>
+    <tr><td>Supabase</td><td>Database, authentication and file storage</td><td>Name, email address, user ID, your lists and saved items</td></tr>
+    <tr><td>Apple</td><td>Processes Shopwise Plus subscriptions</td><td>Purchase transactions. We never see your payment details.</td></tr>
+  </tbody>
+</table>
+<p>Shopwise Plus removes ads. If you subscribe, no advertising data is collected.</p>
 
+
+<h2>Deleting Your Account and Data</h2>
+<p>You can delete your account from inside the app: <strong>Account Settings →
+Delete Account</strong>. That removes your account, your lists, your saved
+leaflets and your loyalty cards from our systems. You can also ask us to delete
+them by emailing the address below.</p>
 
 <h2>Data Retention</h2>
 <p>We will retain your personal information only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use your information to the extent necessary to comply with our legal obligations, resolve disputes, and enforce our policies.</p>
