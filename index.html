@@ -137,7 +137,11 @@ details[open] summary::after{transform:rotate(45deg)}
 details p{margin:0 0 18px;color:var(--muted)}
 .support-card{max-width:760px;margin:28px auto 0;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;
   padding:24px 26px;border-radius:20px;background:var(--g800);color:#fff}
-.support-card a.btn{background:var(--y);color:#1b1b00;text-decoration:none;font-weight:700;padding:12px 20px;border-radius:12px}
+.support-card a.btn{background:var(--y);color:#1b1b00;text-decoration:none;font-weight:700;padding:12px 18px;border-radius:12px}
+.support-card a.btn.alt{background:rgba(255,255,255,.14);color:#fff}
+.mail-opts{display:flex;flex-wrap:wrap;gap:10px}
+.addr{font-weight:650;user-select:all}
+.copy{font:inherit;font-size:13px;margin-left:6px;padding:3px 10px;border-radius:8px;border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;cursor:pointer}
 
 /* final cta */
 .final{background:linear-gradient(135deg,#FDDD59,#f8cf2c);color:#1a1a06;text-align:center}
@@ -286,8 +290,13 @@ footer p{margin:12px 0 0;max-width:46em}
       <details><summary>Is Shopwise linked to the retailers?</summary><p>No. Shopwise is not affiliated with, endorsed by, or operated by any retailer whose leaflets it shows.</p></details>
       <details><summary>How do I delete my account?</summary><p>In the app, go to <strong>Account Settings → Delete Account</strong>. That removes your account, your lists, your saved leaflets and your loyalty cards. See the <a href="privacy.html">Privacy Policy</a> for details.</p></details>
       <div class="support-card reveal">
-        <div><strong>Still stuck?</strong><br>Bug reports, account questions or feedback.</div>
-        <a class="btn" href="mailto:ethancloete@icloud.com?subject=Shopwise%20support">Email support</a>
+        <div><strong>Still stuck?</strong><br>Bug reports, account questions or feedback:<br>
+          <span class="addr">ethancloete@icloud.com</span> <button class="copy" type="button" data-copy="ethancloete@icloud.com">Copy</button></div>
+        <div class="mail-opts">
+          <a class="btn" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=ethancloete@icloud.com&amp;su=Shopwise%20support" target="_blank" rel="noopener">Gmail</a>
+          <a class="btn" href="https://outlook.live.com/mail/0/deeplink/compose?to=ethancloete@icloud.com&amp;subject=Shopwise%20support" target="_blank" rel="noopener">Outlook</a>
+          <a class="btn alt" href="mailto:ethancloete@icloud.com?subject=Shopwise%20support">Mail app</a>
+        </div>
       </div>
     </div>
   </div>
@@ -312,7 +321,7 @@ footer p{margin:12px 0 0;max-width:46em}
     <nav aria-label="Footer">
       <a href="privacy.html">Privacy Policy</a>
       <a href="terms.html">Terms of Service</a>
-      <a href="mailto:ethancloete@icloud.com">Contact</a>
+      <a href="#support">Contact</a>
     </nav>
   </div>
 </footer>
@@ -323,6 +332,12 @@ footer p{margin:12px 0 0;max-width:46em}
     if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
   }), { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+  // Copy the support address, for people whose mail isn't Gmail, Outlook or the default app.
+  document.querySelectorAll('[data-copy]').forEach((b) => b.addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(b.dataset.copy); b.textContent = 'Copied'; }
+    catch { getSelection().selectAllChildren(b.previousElementSibling); b.textContent = 'Press ⌘C'; }
+    setTimeout(() => (b.textContent = 'Copy'), 2000);
+  }));
   // Respect reduced motion: keep the demo on its poster frame.
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const v = document.querySelector('.hero video'); v.removeAttribute('autoplay'); v.pause();
