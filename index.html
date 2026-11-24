@@ -1,26 +1,331 @@
 <!doctype html>
-<html lang="en"><head>
+<html lang="en-ZA"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Legal — Shopwise</title>
+<title>Shopwise: Grocery Deals SA — every leaflet special in one app</title>
+<meta name="description" content="Shopwise puts every South African grocery leaflet in one app, prices your shopping list against this week's specials, and tells you when the things you buy drop in price.">
+<meta name="apple-itunes-app" content="app-id=6819213320">
+<meta name="theme-color" content="#0B4D2C">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Shopwise: Grocery Deals SA">
+<meta property="og:description" content="Every SA grocery leaflet in one app. Leaflet specials, a grocery list that prices itself, and price-drop alerts.">
+<meta property="og:image" content="https://eillotbappo.github.io/shopwise-legal/img/og.jpg">
+<meta property="og:url" content="https://eillotbappo.github.io/shopwise-legal/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+<!-- Google tag (gtag.js) — Google Ads AW-18584315910 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18584315910"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18584315910');
+</script>
+<script>document.documentElement.classList.add('js')</script>
+
 <style>
- body{max-width:44rem;margin:0 auto;padding:2rem 1rem;font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#1c1c1e;background:#fff}
- h1,h2{line-height:1.25}
- hr{border:0;border-top:1px solid #d1d1d6;margin:2rem 0}
- nav{margin-bottom:2rem;font-size:.9rem}
- @media(prefers-color-scheme:dark){body{color:#f2f2f7;background:#000}hr{border-color:#3a3a3c}a{color:#6cf}}
+:root{
+  --g900:#06331d; --g800:#0B4D2C; --g700:#14703E; --g500:#1D9954; --y:#FDDD59;
+  --bg:#ffffff; --bg2:#f3f7f4; --text:#10231a; --muted:#4d5f55; --line:#dce6df; --card:#ffffff;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --bg:#0b1310; --bg2:#101c17; --text:#eef5f0; --muted:#9db2a6; --line:#1f3029; --card:#13211b; }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);
+  font:17px/1.6 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  -webkit-font-smoothing:antialiased}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+h1,h2,h3{line-height:1.1;letter-spacing:-.025em;margin:0}
+.hl{color:var(--y)}
+
+/* nav */
+.nav{position:absolute;inset:0 0 auto;z-index:5}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;font-weight:700;font-size:19px}
+.brand img{width:36px;height:36px;border-radius:9px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.nav nav{display:flex;gap:26px;font-size:15px}
+.nav nav a{color:rgba(255,255,255,.85);text-decoration:none}
+.nav nav a:hover{color:#fff}
+@media (max-width:640px){.nav nav a:not(.keep){display:none}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;color:#fff;
+  background:radial-gradient(900px 500px at 85% 10%,rgba(253,221,89,.16),transparent 60%),
+             radial-gradient(700px 600px at 0% 100%,rgba(29,153,84,.55),transparent 60%),
+             linear-gradient(160deg,var(--g800),var(--g700) 60%,var(--g800))}
+.hero .wrap{display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:center;padding-top:120px;padding-bottom:72px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;letter-spacing:.02em;
+  padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18)}
+.eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--y);box-shadow:0 0 0 4px rgba(253,221,89,.25)}
+.hero h1{font-size:clamp(38px,5.2vw,60px);font-weight:800;margin:22px 0 18px;text-wrap:balance}
+.hero h1 s{text-decoration-thickness:5px;text-decoration-color:var(--y);opacity:.75}
+.hero p.lead{font-size:clamp(17px,1.8vw,20px);color:rgba(255,255,255,.86);max-width:34em;margin:0 0 30px}
+.cta{display:flex;flex-wrap:wrap;align-items:center;gap:18px}
+.badge img{height:56px;width:auto;transition:transform .2s}
+.badge:hover img{transform:translateY(-2px)}
+.cta small{color:rgba(255,255,255,.75);font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px;padding:0;list-style:none}
+.chips li{font-size:14px;padding:7px 13px;border-radius:10px;background:rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.12)}
+.hero-phone{justify-self:center;position:relative}
+.hero-phone::before{content:"";position:absolute;inset:8% -20% 0;background:radial-gradient(closest-side,rgba(253,221,89,.35),transparent);filter:blur(20px);z-index:0}
+@media (max-width:860px){
+  .hero .wrap{grid-template-columns:1fr;text-align:left;padding-top:104px}
+  .hero-phone{margin-top:8px}
+}
+
+/* phone frame */
+.phone{position:relative;z-index:1;width:min(300px,72vw);aspect-ratio:1320/2868;padding:10px;border-radius:48px;
+  background:#0d0d0f;box-shadow:0 0 0 2px #2b2b30 inset,0 30px 60px -20px rgba(0,0,0,.55),0 10px 25px rgba(0,0,0,.25)}
+.phone img,.phone video{width:100%;height:100%;object-fit:cover;border-radius:38px;background:#000}
+.phone.sm{width:min(270px,66vw)}
+
+/* sections */
+section{padding:96px 0}
+.kicker{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--g500)}
+.sec-head{text-align:center;max-width:680px;margin:0 auto 56px}
+.sec-head h2{font-size:clamp(30px,4.2vw,46px);font-weight:800;margin:10px 0 14px}
+.sec-head p{color:var(--muted);margin:0;font-size:18px}
+
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px}
+.step b{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:var(--g800);color:var(--y);font-size:18px;margin-bottom:16px}
+.step h3{font-size:20px;margin-bottom:6px}
+.step p{margin:0;color:var(--muted);font-size:16px}
+@media (max-width:760px){.steps{grid-template-columns:1fr}}
+
+.feature{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding:56px 0}
+.feature + .feature{border-top:1px solid var(--line)}
+.feature .shot{display:flex;justify-content:center;position:relative;padding:28px 0;border-radius:32px;
+  background:radial-gradient(closest-side,rgba(29,153,84,.18),transparent)}
+.feature:nth-of-type(even) .shot{order:2}
+.feature h3{font-size:clamp(28px,3.4vw,38px);font-weight:800;margin:8px 0 16px}
+.feature p{color:var(--muted);margin:0 0 14px}
+.feature ul{margin:18px 0 0;padding:0;list-style:none}
+.feature li{position:relative;padding-left:30px;margin:8px 0}
+.feature li::before{content:"";position:absolute;left:0;top:.35em;width:18px;height:18px;border-radius:6px;
+  background:var(--g500) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/12px no-repeat}
+@media (max-width:860px){
+  .feature{grid-template-columns:1fr;gap:20px;padding:40px 0}
+  .feature:nth-of-type(even) .shot{order:0}
+}
+
+/* price drop notification */
+.notif{position:absolute;z-index:2;top:22%;left:50%;transform:translateX(-50%);width:min(340px,86vw);
+  display:flex;gap:12px;padding:14px;border-radius:20px;color:#111;
+  background:rgba(250,250,252,.82);-webkit-backdrop-filter:blur(18px) saturate(160%);backdrop-filter:blur(18px) saturate(160%);
+  box-shadow:0 18px 40px -12px rgba(0,0,0,.45);animation:drop 6s ease-in-out infinite}
+.notif img{width:38px;height:38px;border-radius:9px;flex:none}
+.notif .t{font-size:13px;line-height:1.35}
+.notif .t span{display:flex;justify-content:space-between;color:#6b6b70;font-size:12px;text-transform:uppercase;letter-spacing:.02em}
+.notif .t strong{display:block;margin:2px 0}
+@keyframes drop{0%,8%{opacity:0;transform:translate(-50%,-14px)}16%,86%{opacity:1;transform:translate(-50%,0)}100%{opacity:0;transform:translate(-50%,-6px)}}
+
+/* faq */
+.faq{background:var(--bg2)}
+.faq .list{max-width:760px;margin:0 auto}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:0 22px;margin-bottom:12px}
+summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:650;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:22px;line-height:1;color:var(--g500);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin:0 0 18px;color:var(--muted)}
+.support-card{max-width:760px;margin:28px auto 0;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;
+  padding:24px 26px;border-radius:20px;background:var(--g800);color:#fff}
+.support-card a.btn{background:var(--y);color:#1b1b00;text-decoration:none;font-weight:700;padding:12px 20px;border-radius:12px}
+
+/* final cta */
+.final{background:linear-gradient(135deg,#FDDD59,#f8cf2c);color:#1a1a06;text-align:center}
+.final h2{font-size:clamp(32px,4.6vw,52px);font-weight:800}
+.final p{margin:14px auto 30px;max-width:30em;font-size:18px;color:#3d3a12}
+.final .badge{display:inline-block}
+
+footer{background:var(--g900);color:rgba(255,255,255,.75);font-size:14px;padding:44px 0}
+footer .wrap{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-start}
+footer .brand{font-size:17px}
+footer nav{display:flex;gap:22px;flex-wrap:wrap}
+footer nav a{color:#fff;text-decoration:none}
+footer p{margin:12px 0 0;max-width:46em}
+
+/* reveal */
+.js .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.js .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .reveal{opacity:1;transform:none;transition:none}
+  .notif{animation:none}
+}
 </style>
-</head><body>
-<nav><a href="./">Shopwise</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></nav>
+</head>
+<body>
 
-<h1>Shopwise</h1>
-<p>Shopwise collects South African retail leaflets and specials into one app.</p>
-<ul>
-  <li><a href="privacy.html">Privacy Policy</a></li>
-  <li><a href="terms.html">Terms of Service</a></li>
-</ul>
-<h2>Support</h2>
-<p>Questions, bug reports or account queries: <a href="mailto:ethancloete@icloud.com">ethancloete@icloud.com</a></p>
-<p>Shopwise is not affiliated with, endorsed by, or operated by any retailer whose leaflets it shows.</p>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="img/icon.png" alt="">Shopwise</a>
+    <nav aria-label="Main">
+      <a href="#features">Features</a>
+      <a href="#support">Support</a>
+      <a class="keep" href="privacy.html">Privacy</a>
+    </nav>
+  </div>
+</header>
 
+<main>
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow"><i></i>Free on iPhone &amp; iPad</span>
+      <h1 id="hero-title">Stop flipping through <s>pamphlets</s>.<br><span class="hl">Every special, one&nbsp;app.</span></h1>
+      <p class="lead">Shopwise puts every South African grocery leaflet in one place, prices your shopping list against this week's specials, and tells you when the things you always buy drop in price.</p>
+      <div class="cta">
+        <a class="badge" href="https://apps.apple.com/za/app/id6819213320" aria-label="Download Shopwise on the App Store"><img src="img/app-store.svg" alt="Download on the App Store" width="168" height="56"></a>
+        <small>Free download</small>
+      </div>
+      <ul class="chips">
+        <li>🗞️ Weekly leaflets</li><li>🛒 Self-pricing grocery list</li><li>🔔 Price-drop alerts</li><li>💳 Loyalty cards</li>
+      </ul>
+    </div>
+    <div class="hero-phone">
+      <div class="phone">
+        <video src="img/demo.mp4" poster="img/leaflets.webp" autoplay muted loop playsinline aria-label="Shopwise app walkthrough"></video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="how-title">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">How it works</span>
+      <h2 id="how-title">Know what your shop costs before you leave home</h2>
+      <p>No more paging through five catalogues to find out who has the cheapest chicken this week.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><b>1</b><h3>Browse the specials</h3><p>Every major retailer's leaflet, updated weekly, in one feed.</p></div>
+      <div class="step reveal"><b>2</b><h3>Build your list</h3><p>Add what you need. Shopwise matches it to live specials.</p></div>
+      <div class="step reveal"><b>3</b><h3>Shop the cheapest store</h3><p>See what the trip costs and where your list is cheapest.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="features" style="padding-top:0" aria-label="Features">
+  <div class="wrap">
+
+    <div class="feature reveal">
+      <div class="shot"><div class="phone sm"><img src="img/leaflets.webp" alt="Leaflets screen listing this week's retailer leaflets" loading="lazy" width="600" height="1304"></div></div>
+      <div>
+        <span class="kicker">Leaflets</span>
+        <h3>Every catalogue, one place</h3>
+        <p>This week's specials from the major retailers, page by page, the same layout you'd get in print.</p>
+        <ul><li>Tap any product on the page to see its price</li><li>See how long each deal runs</li><li>Save leaflets to come back to later</li></ul>
+      </div>
+    </div>
+
+    <div class="feature reveal">
+      <div class="shot"><div class="phone sm"><img src="img/deals.webp" alt="Hot Deals screen with the best deal and its savings" loading="lazy" width="600" height="1304"></div></div>
+      <div>
+        <span class="kicker">Deals</span>
+        <h3>Deals worth the trip</h3>
+        <p>Thousands of promotions, with the best savings up front. Search for exactly what you need and see whether it's genuinely cheaper than usual.</p>
+        <ul><li>Best deal of the day, highlighted</li><li>Sort and filter by store and category</li><li>Add to your list in one tap</li></ul>
+      </div>
+    </div>
+
+    <div class="feature reveal">
+      <div class="shot"><div class="phone sm"><img src="img/grocery.webp" alt="Grocery list grouped by category with prices and savings" loading="lazy" width="600" height="1304"></div></div>
+      <div>
+        <span class="kicker">Grocery list</span>
+        <h3>A grocery list that prices itself</h3>
+        <p>Add what you need. Shopwise matches your items against live specials and shows you what the trip costs, which store is cheapest for your list, and what you'd save by splitting it.</p>
+      </div>
+    </div>
+
+    <div class="feature reveal">
+      <div class="shot">
+        <div class="phone sm"><img src="img/liked.webp" alt="Liked deals screen" loading="lazy" width="600" height="1304"></div>
+        <div class="notif" aria-hidden="true">
+          <img src="img/icon.png" alt="">
+          <div class="t"><span>Shopwise <em style="font-style:normal">now</em></span><strong>Ritebrand Large Eggs 30 Pack is at its lowest price</strong>R69.99 at Shoprite (was R82.99)</div>
+        </div>
+      </div>
+      <div>
+        <span class="kicker">Price-drop alerts</span>
+        <h3>Know when the price drops</h3>
+        <p>Watch any product and get a notification the moment it goes on special, so you buy the things you always buy at the bottom of their price cycle, not the top.</p>
+      </div>
+    </div>
+
+    <div class="feature reveal">
+      <div class="shot"><div class="phone sm"><img src="img/loyalty-cards.webp" alt="Loyalty cards screen with three saved cards" loading="lazy" width="600" height="1304"></div></div>
+      <div>
+        <span class="kicker">Loyalty cards</span>
+        <h3>Every loyalty card, one tap</h3>
+        <p>Scan each card once and it lives in Shopwise. Barcode up at the till: no plastic, no hunting through a wallet.</p>
+        <ul><li>Home screen widgets put the day's best deals and your list one glance away</li></ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="support" class="faq" aria-labelledby="faq-title">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Support</span>
+      <h2 id="faq-title">Questions, answered</h2>
+    </div>
+    <div class="list">
+      <details><summary>Is Shopwise free?</summary><p>Yes. Shopwise is free to download and use. An optional in-app upgrade removes ads and lifts the limits on saved deals, saved leaflets and loyalty cards.</p></details>
+      <details><summary>Which stores are included?</summary><p>Shopwise shows the current leaflets and specials from South Africa's major grocery, pharmacy and home retailers, refreshed as new leaflets are published.</p></details>
+      <details><summary>Are the prices accurate?</summary><p>Prices are those advertised by the retailer and can change. Always check at the till.</p></details>
+      <details><summary>Is Shopwise linked to the retailers?</summary><p>No. Shopwise is not affiliated with, endorsed by, or operated by any retailer whose leaflets it shows.</p></details>
+      <details><summary>How do I delete my account?</summary><p>In the app, go to <strong>Account Settings → Delete Account</strong>. That removes your account, your lists, your saved leaflets and your loyalty cards. See the <a href="privacy.html">Privacy Policy</a> for details.</p></details>
+      <div class="support-card reveal">
+        <div><strong>Still stuck?</strong><br>Bug reports, account questions or feedback.</div>
+        <a class="btn" href="mailto:ethancloete@icloud.com?subject=Shopwise%20support">Email support</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final" aria-labelledby="final-title">
+  <div class="wrap reveal">
+    <h2 id="final-title">Your next shop, cheaper.</h2>
+    <p>Join South African shoppers who check Shopwise before they shop.</p>
+    <a class="badge" href="https://apps.apple.com/za/app/id6819213320" aria-label="Download Shopwise on the App Store"><img src="img/app-store.svg" alt="Download on the App Store" width="168" height="56"></a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="brand" href="./"><img src="img/icon.png" alt="">Shopwise</a>
+      <p>Shopwise is not affiliated with, endorsed by, or operated by any retailer whose leaflets it shows. Retailer names and logos belong to their owners.</p>
+      <p>© 2026 Shopwise</p>
+    </div>
+    <nav aria-label="Footer">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="mailto:ethancloete@icloud.com">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  // Fade sections in as they scroll into view.
+  const io = new IntersectionObserver((es) => es.forEach((e) => {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+  // Respect reduced motion: keep the demo on its poster frame.
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const v = document.querySelector('.hero video'); v.removeAttribute('autoplay'); v.pause();
+  }
+</script>
 </body></html>
