@@ -39,7 +39,7 @@ exactly, the App Privacy answers filed in App Store Connect and the
     <tr><td>Product interaction</td><td>Advertising and analytics — which deals and leaflets are opened</td><td>Yes</td></tr>
     <tr><td>Advertising data</td><td>Advertising — which ads were shown, and whether one of our ads led to your install</td><td>Yes</td></tr>
     <tr><td>Search history</td><td>Analytics — what people search for in the app</td><td>Yes</td></tr>
-    <tr><td>Purchase history</td><td>Analytics — Shopwise Plus subscription events</td><td>Yes</td></tr>
+    <tr><td>Purchase history</td><td>Analytics — Shopwise Unlimited purchase events</td><td>Yes</td></tr>
     <tr><td>Crash data</td><td>Analytics — diagnosing crashes</td><td>No</td></tr>
     <tr><td>Performance data</td><td>Advertising and analytics</td><td>No</td></tr>
     <tr><td>Other diagnostic data</td><td>Advertising and analytics</td><td>No</td></tr>
@@ -61,11 +61,13 @@ led you to install Shopwise. It works in two ways:</p>
   <li><strong>For everyone, signed in or not.</strong> Google states that the
   SDK uses de-identified, temporary app event data on your device, derived from
   signals such as IP address and timestamps. This is built into Google's SDK,
-  and the app has no setting to switch it off.</li>
+  and the app has no setting to switch it off. Google says it is inactive for
+  users in the European Economic Area.</li>
   <li><strong>When you sign in or create an account.</strong> The app turns
   your account email into a one-way hash (SHA-256) and gives it to the SDK,
   which matches it on your device. The sign-in screen tells you this. To avoid
-  it, use Shopwise without an account; signing out stops any further matching.
+  it, use Shopwise without an account; signing out stops the app from passing
+  your email for matching.
   Where Google's consent message is shown (for example in the EEA, the UK and
   Switzerland), the app only does this if you allow it in that message, and you
   can change your choice under <strong>Account Settings → Ad Privacy
@@ -75,8 +77,7 @@ led you to install Shopwise. It works in two ways:</p>
 that nothing leaves your device in a way that identifies you or your device:
 Google receives only a de-identified result, such as &quot;an ad led to an
 install&quot;, and handles it under its own
-<a href="https://policies.google.com/privacy">privacy policy</a>. Google reports
-at most one match per user. Signing out, deleting your account or changing your
+<a href="https://policies.google.com/privacy">privacy policy</a>. Signing out, deleting your account or changing your
 choice later does not withdraw a match that has already been reported.</p>
 
 
@@ -102,13 +103,12 @@ choice later does not withdraw a match that has already been reported.</p>
     <tr><td>Google AdMob</td><td>Shows ads to users on the free tier</td><td>Coarse location, device ID, advertising data, diagnostics</td></tr>
     <tr><td>Google Firebase Analytics</td><td>Tells us which features are used</td><td>Product interaction, search history, purchase history, device ID, diagnostics</td></tr>
     <tr><td>Supabase</td><td>Database, authentication and file storage</td><td>Name, email address, user ID, your lists and saved items</td></tr>
-    <tr><td>Apple</td><td>Processes Shopwise Plus subscriptions</td><td>Purchase transactions. We never see your payment details.</td></tr>
+    <tr><td>Apple</td><td>Processes Shopwise Unlimited purchases</td><td>Purchase transactions. We never see your payment details.</td></tr>
     <tr><td>Google Ads on-device conversion measurement (in the app, through Firebase Analytics)</td><td>Tells us whether our ads led to installs, by matching on your device</td><td>A de-identified result only, according to Google. Your email is hashed and matched on your device; Google states it is never sent to Google in readable form.</td></tr>
     <tr><td>Google Ads tag (this website only)</td><td>Measures visits to this website from our ads</td><td>Pages visited, IP address, browser details and cookies, on the website only. Not used in the app.</td></tr>
   </tbody>
 </table>
-<p>Shopwise Plus removes ads, and AdMob receives no advertising data from
-subscribers. Ad measurement on your device (see Tracking) still applies.</p>
+<p>Shopwise Unlimited removes ads: no ads are requested once you own it. Ad measurement on your device (see Tracking) still applies.</p>
 <p>We confirm that each of these services provides the same or equal protection
 of your data as stated in this policy.</p>
 
